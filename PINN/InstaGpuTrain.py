@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-import time
+import time 
 from tqdm import tqdm
 from PINNs_torch import PINNs, get_device
 import os
@@ -25,7 +25,7 @@ IsLambdaPhysics1 = False
 
 TargetLossRawPhysics = 300000.0
 TargetValLoss = 0.00083
-MaxLambda = 0.5        
+MaxLambda = 0.5
 
 OnLambdaPhysics = 1e-9
 PhysicsOnTie = 100
@@ -33,19 +33,19 @@ tie = 0
 
 
 # file route
-filepath = "PINN/learning_data/RK4.npy"
+filepath = "data/learning_data/RK4.npy"
 save_dir_base = f"model_{timee}"
 scaler_dir = f"scaler_{timee}.npy"
-aa = f'PINN/models/{timee}'
+aa = f'data/models/{timee}'
 os.makedirs(aa, exist_ok=False)
 
 
 raw_data = np.load(filepath)
 
-X = raw_data[:, :-1, :] 
+X = raw_data[:, :-1, :]
 T = raw_data[:, 1:, :4]
 
-X_flat = X.reshape(-1, 8)
+X_flat = X.reshape(-1, 8)   
 T_flat = T.reshape(-1, 4)
 
 X_mean = X_flat.mean(axis=0)
@@ -183,7 +183,7 @@ try:
             else:
                 if (LossPhysicsRaw < TargetLossRawPhysics) and (val_loss < TargetValLoss):
                     tie += 1
-                else:
+                else:   
                     tie = 0
 
                 if tie >= PhysicsOnTie/20:  

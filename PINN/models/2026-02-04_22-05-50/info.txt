@@ -1,6 +1,0 @@
-Best Val Loss: 0.007582
-Epochs Trained: 16
-Batch Size: 65536
-Lambda Physics: 0
-Learning Rate: 0.001
-Scheduler Patience: 600

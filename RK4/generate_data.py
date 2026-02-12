@@ -10,9 +10,9 @@ def generate_and_save_states(filename, n_samples):
             line = f"{theta[i, 0]},{omega[i, 0]},{theta[i, 1]},{omega[i, 1]}\n"
             f.write(line)
 
-num_samples = 500
+num_samples = 50000
 
-file_route = "Double_pendulum/RK4_ver"
+file_route = "RK4"
 file_name = "initial_states.txt"
 
 generate_and_save_states(f'{file_route}/{file_name}', num_samples)

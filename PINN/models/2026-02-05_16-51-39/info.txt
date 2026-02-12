@@ -1,6 +1,0 @@
-Best Val Loss: 0.001825
-Best Physics Raw Loss: inf
-Epochs Trained: 26
-Batch Size: 65536
-Final Lambda: 0
-Learning Rate: 0.0005
